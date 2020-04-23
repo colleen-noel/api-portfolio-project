@@ -1,0 +1,31 @@
+{
+  "name": "api-portfolio-project",
+  "version": "1.0.0",
+  "description": "You will be building a working API and front-end. This is part 1 of 2. Create a new repo in GitHub for your project, make your instructor a collaborator, and clone it locally. Remember to work in and part-one-answer branch, not master In this part of your project you will be building the front-end for your API site. The design and content of your front-end is up to you, the only requirement is that it provides documentation for using the API you will be building Your first progress check with your instructor will be the week of April 19th You should push all progress to GitHub prior to your meeting with the instructor Your graded submission for this part will be due on Thursday April 30th before class",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/nodemon index.js",
+    "lint": "./node_module/.bin/eslint -- format codeframe.",
+    "lint.fix": "./node_module/.bin/eslint -fix -- format codeframe.",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colleen-noel/api-portfolio-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colleen-noel/api-portfolio-project/issues"
+  },
+  "homepage": "https://github.com/colleen-noel/api-portfolio-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.3"
+  }
+}

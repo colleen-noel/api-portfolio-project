@@ -1,0 +1,16 @@
+body{
+  background-color: aliceblue;
+  
+}
+
+.header{
+  text-align: center;
+  color: purple;
+}
+
+.row{
+  text-align: left;
+  padding: 8px;
+  margin: 5px;
+  color: black
+}
