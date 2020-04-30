@@ -1,36 +1,156 @@
 <html>
 
 <head>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <link rel="stylesheet" href="bootstrap.min.css" />
+  <script src="bootstrap.min.js"></script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <h1 class="header">Welcome to the WhedonVerse</h1>
-  <div class="container">
-    <div class="col-sm">
-      <div class="row">
-        GET/whedonVerse
-      </div>
-      <div class="row">
-        GET/whedonVerse/{movie}
-      </div>
-      <div class="row">
-        GET/whedonVerse/{series}
-      </div>
-      <div class="row">
-        POST/whedonVerse
-      </div>
-      <div class="row">
-        DELETE/whedonVerse/{movie}
+
+  <div id="accordian">
+
+    <div class="card getAll">
+      <div class="card-header" id="headingOne">
+        <span class="command">
+          <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            <span class="get">GET</span>/whedonverse
+          </button>
+        </span>
       </div>
 
-
-
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordian">
+        <div class="card-body" id="getAll">
+          <div class="title">Method</div>
+          <div class="get answer">GET</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse</div>
+          <div class="title">Description</div>
+          <div class="answer">Returns a list of all of Joss Whedon's projects. </div>
+        </div>
+      </div>
     </div>
 
 
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <span class="command">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            <span class="get">GET</span>/whedonverse/{movie}
+          </button>
+        </span>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordian">
+        <div class="card-body" id="getMovie">
+          <div class="title">Method</div>
+          <div class="get answer">GET</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse/movie</div>
+          <div class="title">Description</div>
+          <div class="answer">Returns a list of all of Joss Whedon's movies. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <span class="command">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            <span class="get">GET</span>/whedonverse/{series}
+          </button>
+        </span>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordian">
+        <div class="card-body" id="getSeries">
+          <div class="title">Method</div>
+          <div class="get answer">GET</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse/series</div>
+          <div class="title">Description</div>
+          <div class="answer">Returns a list of all of Joss Whedon's televison series. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <span class="command">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+            aria-expanded="false" aria-controls="collapseFour">
+            <span class="get">GET</span>/whedonverse/{actor}
+          </button>
+        </span>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordian">
+        <div class="card-body" id="getactor">
+          <div class="title">Method</div>
+          <div class="get answer">GET</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse/actor</div>
+          <div class="title">Description</div>
+          <div class="answer">Returns a list of all of the projects of Joss Whedon's that the specified actor has
+            starred in. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingFive">
+        <span class="command">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+            aria-expanded="false" aria-controls="collapseFive">
+            <span class="post">POST</span>/whedonverse
+          </button>
+        </span>
+      </div>
+      <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordian">
+        <div class="card-body" id="postWhedonverse">
+          <div class="title">Method</div>
+          <div class="post answer">POST</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse</div>
+          <div class="title">Headers</div>
+          <div class="answer">Content-Type: application/json</div>
+          <div class="title">Body</div>
+          <div class="answer">{ "series": "New Series", "starring": ["Actors"], "airdates": "start year - end year",
+            "seasons": 1
+            }</div>
+          <div class="answer">{ "movie": "New Movie", "starring": ["Actors"], "releaseDate": "year", "director":
+            "Director" }</div>
+          <div class="title">Description</div>
+          <div class="answer">Adds a new entry into the WhedonVerse. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingSix">
+        <span class="command">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+            aria-controls="collapseSix">
+            <span class="delete">DELETE</span>/whedonverse
+          </button>
+        </span>
+      </div>
+      <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordian">
+        <div class="card-body" id="deleteWhedonverse">
+          <div class="title">Method</div>
+          <div class="delete answer">DELETE</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse</div>
+          <div class="title">Description</div>
+          <div class="answer">Deletes the selected entry from the WhedonVerse. </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 </body>
 
 </html>

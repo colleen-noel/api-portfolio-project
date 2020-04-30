@@ -5,12 +5,50 @@ body{
 
 .header{
   text-align: center;
+  background-color: lightgray;
   color: purple;
+  border: black solid 5px;
+  margin: 2px;
+  padding: 15px;
 }
 
-.row{
-  text-align: left;
-  padding: 8px;
-  margin: 5px;
-  color: black
+#accordian{
+  border: black solid 5px;
+  margin: 15px;
 }
+
+.card-header{
+  text-align: left;
+  font-weight: bolder;
+ }
+
+.collapse-show{
+  background-color: white;
+}
+
+.command{
+  font-weight: bolder ;
+}
+
+.title{
+  text-align: left;
+  font-weight: bold;
+}
+
+.answer{
+  text-align: left;
+  padding-left: 15px;
+}
+
+.get{
+  color: darkred;
+}
+
+.post{
+  color: darkgoldenrod;
+}
+
+.delete{
+  color: darkslateblue;
+}
+
