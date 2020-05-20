@@ -104,7 +104,7 @@
         <span class="command">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
             aria-expanded="false" aria-controls="collapseFive">
-            <span class="post">POST</span>/whedonverse
+            <span class="post">POST</span>/whedonverse/{movie}
           </button>
         </span>
       </div>
@@ -113,17 +113,14 @@
           <div class="title">Method</div>
           <div class="post answer">POST</div>
           <div class="title">Route</div>
-          <div class="answer">http://localhost:4004/api/whedonverse</div>
+          <div class="answer">http://localhost:4004/api/whedonverse/movie</div>
           <div class="title">Headers</div>
           <div class="answer">Content-Type: application/json</div>
           <div class="title">Body</div>
-          <div class="answer">{ "series": "New Series", "starring": ["Actors"], "airdates": "start year - end year",
-            "seasons": 1
-            }</div>
           <div class="answer">{ "movie": "New Movie", "starring": ["Actors"], "releaseDate": "year", "director":
             "Director" }</div>
           <div class="title">Description</div>
-          <div class="answer">Adds a new entry into the WhedonVerse. </div>
+          <div class="answer">Adds a new movie entry into the WhedonVerse. </div>
         </div>
       </div>
     </div>
@@ -133,11 +130,38 @@
         <span class="command">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
             aria-controls="collapseSix">
-            <span class="delete">DELETE</span>/whedonverse
+            <span class="post">POST</span>/whedonverse/{series}
           </button>
         </span>
       </div>
       <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordian">
+        <div class="card-body" id="postWhedonverse">
+          <div class="title">Method</div>
+          <div class="post answer">POST</div>
+          <div class="title">Route</div>
+          <div class="answer">http://localhost:4004/api/whedonverse/series</div>
+          <div class="title">Headers</div>
+          <div class="answer">Content-Type: application/json</div>
+          <div class="title">Body</div>
+          <div class="answer">{ "series": "New Series", "starring": ["Actors"], "airdates": "start year - end year",
+            "seasons": 1
+            }</div>
+          <div class="title">Description</div>
+          <div class="answer">Adds a new series entry into the WhedonVerse. </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingSeven">
+        <span class="command">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven"
+            aria-expanded="false" aria-controls="collapseSeven">
+            <span class="delete">DELETE</span>/whedonverse
+          </button>
+        </span>
+      </div>
+      <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordian">
         <div class="card-body" id="deleteWhedonverse">
           <div class="title">Method</div>
           <div class="delete answer">DELETE</div>
