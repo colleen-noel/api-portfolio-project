@@ -5,10 +5,6 @@ const series = (connection, Sequelize) => {
     airDates: { type: Sequelize.STRING },
     numberofSeasons: { type: Sequelize.INTEGER }
   }, {
-    defaultScope: {
-      attributes: { exclude: ['deletedAt'] }
-    }
-  }, {
     paranoid: true,
   })
 }

@@ -1,0 +1,142 @@
+html
+  include partials/head
+
+  body
+  h1.header 
+    p Welcome to the WhedonVerse
+
+  div(id="accordian")
+    
+   div(class="card getAll")
+      div(class="card-header" id="headingOne")
+        span(class="command")
+          button(type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne")
+            span(class="get") GET
+            span(class="path") /whedonverse
+
+      div(id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordian")
+        div(class="card-body" id="getAll")
+          div(class="title") Method
+          div(class="get answer") GET
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse
+          div(class="title") Description
+          div(class="answer") Returns a list of all of Joss Whedon's projects.
+        
+
+
+      div(class="card")
+        div(class="card-header" id="headingTwo")
+           span(class="command")
+             button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+              aria-controls="collapseTwo")
+              span(class="get") GET
+              span(class="path") /whedonverse/{movie}
+         
+      div(id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordian")
+        div(class="card-body" id="getMovie")
+          div(class="title") Method
+          div(class="get answer") GET
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse/movie/{name}
+          div(class="title") Description
+          div(class="answer") Returns a list of all of Joss Whedon's movies that partially match the name provided.
+      
+
+      div(class="card")
+        div(class="card-header" id="headingThree")
+          span(class="command")
+            button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree")
+              span(class="get") GET
+              span(class="path") /whedonverse/{series}
+         
+      div(id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordian")
+        div(class="card-body" id="getSeries")
+          div(class="title") Method
+          div(class="get answer") GET
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse/series/{name}
+          div(class="title") Description
+          div(class="answer") Returns a list of all of Joss Whedon's televison series that partially match the name provided. 
+     
+
+      div(class="card")
+        div(class="card-header" id="headingFour")
+         span(class="command")
+            button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+              aria-expanded="false" aria-controls="collapseFour")
+              span(class="get") GET
+              span(class="path") /whedonverse/{actor}
+        
+      div(id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordian")
+        div(class="card-body" id="getactor")
+          div(class="title") Method
+          div(class="get answer") GET
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse/actor/{name}
+          div(class="title") Description
+          div(class="answer") Returns a list of all of the projects of Joss Whedon's that the specified actor has starred in, based on partial match of first or last name given. 
+        
+
+      div(class="card")
+        div(class="card-header" id="headingFive")
+          span(class="command")
+            button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+              aria-expanded="false" aria-controls="collapseFive")
+              span(class="post") POST
+              span(class="path") /whedonverse/movie
+          
+      div(id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordian")
+        div(class="card-body" id="postWhedonverse")
+          div(class="title") Method
+          div(class="post answer") POST
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse/movie
+          div(class="title") Headers
+          div(class="answer") Content-Type: application/json
+          div(class="title") Body
+          div(class="answer") { "movie": "New Movie", releaseDate": "year", "director": "Director" }
+          div(class="title") Description
+          div(class="answer") Adds a new movie entry into the WhedonVerse. 
+       
+
+      div(class="card")
+        div(class="card-header" id="headingSix")
+          span(class="command")
+            button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+              aria-controls="collapseSix")
+              span(class="post") POST
+              span(class="path") /whedonverse/series
+          
+      div(id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordian")
+        div(class="card-body" id="postWhedonverse")
+          div(class="title") Method
+          div(class="post answer") POST
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse/series
+          div(class="title") Headers
+          div(class="answer") Content-Type: application/json
+          div(class="title") Body
+          div(class="answer") { "series": "New Series", "airdates": "start year - end year", "seasons": 1 }
+          div(class="title") Description
+          div(class="answer") Adds a new series entry into the WhedonVerse.
+        
+
+      div(class="card")
+        div(class="card-header" id="headingSeven")
+          span(class="command")
+            button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven"
+              aria-expanded="false" aria-controls="collapseSeven")
+              span(class="delete") DELETE
+              span(class="path") /whedonverse/series/{id}
+         
+      div(id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordian")
+        div(class="card-body" id="deleteWhedonverse")
+          div(class="title") Method
+          div(class="delete answer") DELETE
+          div(class="title") Route
+          div(class="answer") http://localhost:4004/api/whedonverse/series/id
+          div(class="title") Description
+          div(class="answer") Deletes the selected series from the WhedonVerse.

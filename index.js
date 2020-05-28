@@ -6,8 +6,14 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
+app.set('view engine', 'pug')
+
 app.use(express.static('public'))
 app.use(bodyParser.json())
+
+app.get('/test', (request, response) => {
+  return response.render('index')
+})
 
 app.get('/whedonVerse/', getAllProjects)
 
@@ -21,7 +27,7 @@ app.post('/whedonVerse/movie', bodyParser.json(), saveNewMovie)
 
 app.post('/whedonVerse/series', bodyParser.json(), saveNewSeries)
 
-app.delete('/whedonVerse/series', deleteSeries)
+app.delete('/whedonVerse/series/:id', deleteSeries)
 
 
 app.all('*', (request, response) => {

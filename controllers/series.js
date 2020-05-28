@@ -39,21 +39,22 @@ const saveNewSeries = async (request, response) => {
 
 const deleteSeries = async (request, response) => {
   try {
-    const { name } = request.params
+    const { id } = request.params
 
     const series = await models.Series.findOne({
-      where: { name: name },
+      where: { id: id },
       include: [
         { model: models.Actors },
       ],
     })
-
+    console.log(series)
     if (!series) return response.staus(404).send('Delete unsuccessful, unable to find series, please try again.')
 
-    await models.Series.destroy({ where: { name: name } })
+    await models.Series.destroy({ where: { id: id } })
 
     return response.send('Successfully deleted series.')
   } catch (error) {
+    console.log("error", error)
     return response.status(500).send('Unable to delete series, please try again.')
   }
 }

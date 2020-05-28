@@ -41,12 +41,11 @@ const getMoviesByName = async (request, response) => {
 const saveNewMovie = async (request, response) => {
   try {
     const { name, yearReleased, director } = request.body
-
     if (!name || !yearReleased || !director) {
       return response.status(404).send('Cannot create movie, missing field(s). Please try again.')
     }
     const newMovie = await models.Movies.create({ name, yearReleased, director })
-
+    console.log("newMovie:", newMovie)
     return response.status(201).send(newMovie)
   } catch (error) {
     return response.status(500).send('Unable to add movie, please try again.')
