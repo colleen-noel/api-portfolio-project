@@ -1,26 +1,27 @@
 const express = require('express')
-const { getEntireWhedonVerse, getMovieOrSeriesByIdentifier, saveNewMovie } = require('./controllers/movies')
-const { saveNewSeries, deleteComponent } = require('./controllers/series')
+const { getAllProjects, getMoviesByName, saveNewMovie } = require('./controllers/movies')
+const { getSeriesByName, saveNewSeries, deleteSeries } = require('./controllers/series')
 const { getMoviesandSeriesByActor } = require('./controllers/actors')
 const bodyParser = require('body-parser')
 
 const app = express()
 
 app.use(express.static('public'))
-app.use(bodyParser.json)
+app.use(bodyParser.json())
 
+app.get('/whedonVerse/', getAllProjects)
 
-app.get('/whedonVerse', getEntireWhedonVerse)
+app.get('/whedonVerse/movies/:name', getMoviesByName)
 
-app.get('/whedonVerse/:identifier', getMovieOrSeriesByIdentifier)
+app.get('/whedonVerse/series/:name', getSeriesByName)
 
-app.get('/whedonVerse/:actor', getMoviesandSeriesByActor)
+app.get('/whedonVerse/actor/:identifier', getMoviesandSeriesByActor)
 
-app.post('/whedonVerse', bodyParser.json(), saveNewMovie)
+app.post('/whedonVerse/movie', bodyParser.json(), saveNewMovie)
 
-app.post('/whedonVerse', bodyParser.json(), saveNewSeries)
+app.post('/whedonVerse/series', bodyParser.json(), saveNewSeries)
 
-app.delete('/whedonVerse', deleteComponent)
+app.delete('/whedonVerse/series', deleteSeries)
 
 
 app.all('*', (request, response) => {

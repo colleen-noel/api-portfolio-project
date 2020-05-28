@@ -25,4 +25,14 @@ Movies.belongsToMany(Actors, { through: MoviesActors })
 Actors.belongsToMany(Series, { through: SeriesActors })
 Series.belongsToMany(Actors, { through: SeriesActors })
 
+module.exports = {
+  Movies,
+  Series,
+  Actors,
+  MoviesActors,
+  SeriesActors,
+  Op: Sequelize.Op,
+}
+
+
 
