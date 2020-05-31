@@ -32,14 +32,14 @@ html
              button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
               aria-controls="collapseTwo")
               span(class="get") GET
-              span(class="path") /whedonverse/{movie}
+              span(class="path") /whedonverse/movie/{name}
          
       div(id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordian")
         div(class="card-body" id="getMovie")
           div(class="title") Method
           div(class="get answer") GET
           div(class="title") Route
-          div(class="answer") http://localhost:4004/api/whedonverse/movie/{name}
+          div(class="answer") http://localhost:4004/api/whedonverse/movie/name
           div(class="title") Description
           div(class="answer") Returns a list of all of Joss Whedon's movies that partially match the name provided.
       
@@ -50,7 +50,7 @@ html
             button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
               aria-expanded="false" aria-controls="collapseThree")
               span(class="get") GET
-              span(class="path") /whedonverse/{series}
+              span(class="path") /whedonverse/series/{name}
          
       div(id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordian")
         div(class="card-body" id="getSeries")
@@ -68,7 +68,7 @@ html
             button(class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
               aria-expanded="false" aria-controls="collapseFour")
               span(class="get") GET
-              span(class="path") /whedonverse/{actor}
+              span(class="path") /whedonverse/actor/{name}
         
       div(id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordian")
         div(class="card-body" id="getactor")
