@@ -10,7 +10,6 @@ const mockMovie = [{
   director: 'Joss Whedon',
 }]
 
-const projectList = [mockSeries, mockMovie]
 
 const singleMovie = {
   name: 'Much Ado About Nothing',
@@ -27,9 +26,9 @@ const addedMovie = {
 
 const incompleteMovie = {
   name: 'Cabin in the Woods',
-  yearReleased: 2012,
-  director: '',
+  yearReleased: '',
+  director: 'Drew Goddard',
 }
 
-module.exports = { projectList, singleMovie, addedMovie, incompleteMovie }
+module.exports = { mockSeries, mockMovie, singleMovie, addedMovie, incompleteMovie }
 

@@ -9,7 +9,7 @@ const getAllProjects = async (request, response) => {
       series: allSeries
     }
 
-    return (allProjects)
+    return (allProjects.movies.length > 0 || allProjects.series.length > 0)
       ? response.send(allProjects)
       : response.status(404).send('No projects found, please try again.')
   } catch (error) {
@@ -34,7 +34,7 @@ const getMoviesByName = async (request, response) => {
       ? response.send(movie)
       : response.status(404).send('No movies found by that name, please try again.')
   } catch (error) {
-    return response.status(500).send('Unable to retreive movies, please try again.')
+    return response.status(500).send('Unable to retrieve movies, please try again.')
   }
 }
 

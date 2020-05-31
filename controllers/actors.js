@@ -26,9 +26,9 @@ const getMoviesandSeriesByActor = async (request, response) => {
 
     return projectsByActor
       ? response.send(projectsByActor)
-      : response.status(404).send('Actor not found, please try again')
+      : response.status(404).send('Actor not found, please try again.')
   } catch (error) {
-    response.status(500).send('Unable to retreive actor, please try again')
+    response.status(500).send('Unable to retrieve actor, please try again')
   }
 }
 
