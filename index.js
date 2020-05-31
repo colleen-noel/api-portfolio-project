@@ -11,7 +11,7 @@ app.set('view engine', 'pug')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
-app.get('/test', (request, response) => {
+app.get('/', (request, response) => {
   return response.render('index')
 })
 
